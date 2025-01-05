@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Differential Equations</title>
+  <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+  <!-- Welcome Page -->
+  <div id="welcome-screen" class="content-box">
+    <h1>Differential Equations</h1>
+    <p>Name: Shyra Faith Toralba</p>
+    <p>Instructor: Ramel Sigue</p>
+    <button onclick="start()">Start</button>
+  </div>
+
+  <!-- Options Page -->
+  <div id="options-screen" class="content-box" style="display: none;">
+    <h2>What do you want to calculate?</h2>
+    <button onclick="showGrowthDecay()">Growth and Decay</button>
+    <button onclick="showNewtonsLaw()">Newton’s Law of Cooling/Heating</button>
+  </div>
+
+  <!-- Growth and Decay Section -->
+  <div id="growth-decay-screen" class="content-box" style="display: none;">
+    <h2>Growth and Decay</h2>
+    <p>Formula: \( \frac{dP}{dt} = kP \), \( P = Ce^{kt} \)</p>
+    
+    <label for="initial-pop">Initial Population (P₀):</label>
+    <input type="number" id="initial-pop" placeholder="Enter initial population">
+    
+    <label for="initial-time">Initial Time (t₀):</label>
+    <input type="number" id="initial-time" value="0" readonly>
+    
+    <label for="intermediate-time">Intermediate Time (t₁):</label>
+    <input type="number" id="intermediate-time" placeholder="Enter intermediate time (years)">
+    
+    <label for="intermediate-pop">Population at Intermediate Time (P₁):</label>
+    <input type="number" id="intermediate-pop" placeholder="Enter intermediate population">
+    
+    <label for="final-time">Final Time (t):</label>
+    <input type="number" id="final-time" placeholder="Enter final time (years)">
+    
+    <button onclick="solveGrowthDecay()">Solve Growth and Decay</button>
+    <button onclick="askToSolveAnother()">Solve Another?</button>
+    <button onclick="goBackToOptions()">Go Back</button>
+    <p id="growth-decay-result"></p>
+  </div>
+
+  <!-- Newton's Law Section -->
+  <div id="newton-law-screen" class="content-box" style="display: none;">
+    <h2>Newton’s Law of Cooling/Heating</h2>
+    <p>Formula: \( T - T_m = Ce^{kt} \)</p>
+    
+    <label for="initial-temp">Initial Temperature (T₀):</label>
+    <input type="number" id="initial-temp" placeholder="Enter initial temperature (e.g., °C or °F)">
+    
+    <label for="room-temp">Room Temperature (Tₘ):</label>
+    <input type="number" id="room-temp" placeholder="Enter room temperature (e.g., °C or °F)">
+    
+    <label for="intermediate-time-nl">Intermediate Time (t₁):</label>
+    <input type="number" id="intermediate-time-nl" placeholder="Enter intermediate time (minutes)">
+    
+    <label for="temp-intermediate">Temperature at Intermediate Time (T₁):</label>
+    <input type="number" id="temp-intermediate" placeholder="Enter temperature at intermediate time (e.g., °C or °F)">
+    
+    <label for="final-time-nl">Final Time (t):</label>
+    <input type="number" id="final-time-nl" placeholder="Enter final time (minutes)">
+    
+    <button onclick="solveNewtonsLaw()">Solve Newton’s Law</button>
+    <button onclick="askToSolveAnother()">Solve Another?</button>
+    <button onclick="goBackToOptions()">Go Back</button>
+    <p id="newton-law-result"></p>
+  </div>
+
+  <script src="main.js"></script> <!-- Link to your JavaScript file -->
+</body>
+</html>

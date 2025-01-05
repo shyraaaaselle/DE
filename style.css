@@ -1,0 +1,132 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #000000, #1a0011);
+    color: #fff;
+    text-align: center;
+    min-height: 100vh;
+  }
+  
+  .content-box {
+    background: linear-gradient(145deg, #1a1a1a, #2a1a24);
+    border: 2px solid transparent;
+    border-image: linear-gradient(45deg, #ff69b4, #ff85c1, #ff1493) 1;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    box-shadow: 
+      0 4px 15px rgba(255, 105, 180, 0.3),
+      0 0 30px rgba(255, 20, 147, 0.2);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .content-box::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #ff69b4, #ff85c1, #ff1493);
+    z-index: -1;
+    border-radius: 14px;
+    animation: borderGlow 3s ease-in-out infinite;
+  }
+  
+  @keyframes borderGlow {
+    0% { opacity: 0.5; }
+    50% { opacity: 0.8; }
+    100% { opacity: 0.5; }
+  }
+  
+  h1, h2 {
+    background: linear-gradient(90deg, #ff69b4, #ff1493);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.3);
+  }
+  
+  p {
+    color: #ff85c1;
+  }
+  
+  button {
+    background: linear-gradient(45deg, #ff69b4, #ff1493);
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    margin: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+  }
+  
+  button:hover {
+    background: linear-gradient(45deg, #ff85c1, #ff69b4);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 105, 180, 0.4);
+  }
+  
+  input {
+    margin: 10px 0;
+    padding: 12px;
+    width: calc(100% - 24px);
+    border: 2px solid transparent;
+    border-image: linear-gradient(45deg, #ff69b4, #ff1493) 1;
+    border-radius: 5px;
+    background: linear-gradient(145deg, #1a1a1a, #2a1a24);
+    color: #fff;
+    transition: all 0.3s ease;
+  }
+  
+  input:focus {
+    outline: none;
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.4);
+  }
+  
+  label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+    background: linear-gradient(90deg, #ff69b4, #ff1493);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  #growth-decay-result,
+  #newton-law-result {
+    margin-top: 20px;
+    font-size: 1.2em;
+    background: linear-gradient(90deg, #ff85c1, #ff69b4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    padding: 10px;
+    border-radius: 5px;
+    text-shadow: none;
+  }
+  
+  /* For mobile responsiveness */
+  @media (max-width: 768px) {
+    .content-box {
+      padding: 15px;
+      margin: 15px auto;
+    }
+  
+    button {
+      padding: 10px 20px;
+    }
+  
+    input {
+      width: calc(100% - 20px);
+      padding: 10px;
+    }
+  }  
